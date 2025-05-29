@@ -1,30 +1,29 @@
 
 # SeedSearch
-A mod that searches through Slay the Spire seeds.
 一个用以搜寻杀戮尖塔农种/毒种的mod。
 
 ##  环境需求
 * Slay the Spire，即杀戮尖塔游戏本体。
 * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
-注：由于此模组运行在无前端的杀戮尖塔程序中，且并不会创建一个新的游戏视窗，SeedSearch不依赖于其他mod运行，也没有进行过与其他mod共同运行时的兼容性验证；但如果你在运行了此mod的同时运行了其他mod，那么输出的种子值可能会受到影响。所以在使用SeedSearch时，不要同时启用其他任何mod，（包括basemod）以使SeedSearch运行在纯净的无mod环境中，保证输出的种子在原版游戏中仍然有效。值得一提的是，某些角色mod（比如Thorton mod和Jorbs mod）也是可以用SeedSearch来roll出农种/毒种的（至少不至于让程序崩溃/宕机）。
+注：由于此模组运行在无前端的杀戮尖塔程序中，且并不会创建一个新的游戏视窗，所以SeedSearch不依赖于其他mod运行，也没有进行过与其他mod共同运行时的兼容性验证；但如果你在运行了此mod的同时运行了其他mod，那么输出的种子值可能会受到影响。所以在使用SeedSearch时，不要同时启用其他任何mod，（包括basemod）以使SeedSearch运行在纯净的无mod环境中，保证输出的种子在原版游戏中仍然有效。值得一提的是，某些角色mod（比如Thorton mod和Jorbs mod）也是可以用SeedSearch来roll出农种/毒种的（至少不至于让程序崩溃/宕机）。
 
 ##  安装与使用
 
 Mod的安装：你可以从本项目的Release页面，或者自行从源代码编译获取seedsearch.jar文件以安装seedsearch mod。如果你的杀戮尖塔安装目录下没有/mods/文件夹，就在根目录下创建它，然后将你所下载/编译好的seedsearch.jar放进去。如果一切操作正确，当你启动mod the spire时，seedsearch就会出现在mod列表中了。
 
-当你第一次运行seedsearch时，它会以默认参数搜索值为0到100之间的全部种子；在v2.2版本，默认参数检索出的种子值应为54。在这之后，如果一切运行正常，那么你的游戏根目录下就会多出一个名为"searchConfig.json"的配置文件。此文件用以控制seedsearch运行时的检索条件。注：此工具运行时，游戏本体并不会被启动；所有检索输出都会被print至ModtheSpire的标准输出流中（也就是那个启动游戏后留下的那个窗口）。
+当你第一次运行seedsearch时，它会以默认参数搜索值为0到100之间的全部种子；在v2.2版本，默认参数检索出的种子值应为54。在这之后，如果一切运行正常，那么你的游戏根目录下就会多出一个名为"searchConfig.json"的配置文件。此文件用以控制seedsearch运行时的检索条件。
+注：此工具运行时，游戏本体并不会被启动；所有检索输出都会被print至ModtheSpire的标准输出流中（也就是那个启动游戏后留下的那个窗口）。
 
 ##  参数设置
 
 接下来是对searchConfig.json其中参数的描述，随君喜好定制你的文件以控制生成的种子。
 
-Some settings take lists of relics, cards, or events. For these settings, either use the ID (found in the game's code and output of Seed Search) or the name in the game's currently selected language. Seed Search will warn you if an invalid name or ID is provided. For example, the following two settings for requiredEvents are both valid:
+一些参数设置涉及到遗物、卡牌或者事件。在设置这些参数时，使用它们对应的ID，或者你当前游戏语言对应的名称都是可以的。当你输入了一个错误的ID或者名称时，程序将会发出警告。
+譬如，在游戏语言为英文时，以下两种配置写法都是可以的：
 
 ` "requiredEvents": ["FaceTrader", "Beggar"],`  
 ` "requiredEvents": ["Face Trader", "Old Beggar"],`
-
-
 
 ### Core search parameters
 
