@@ -25,15 +25,18 @@ Mod的安装：你可以从本项目的Release页面，或者自行从源代码�
 ` "requiredEvents": ["FaceTrader", "Beggar"],`  
 ` "requiredEvents": ["Face Trader", "Old Beggar"],`
 
-### Core search parameters
+###   核心搜索参数
 
-* **ascensionLevel**: The ascension level used for the search (0 to 20)
-* **playerClass**: The class used to search (IRONCLAD, THE_SILENT, DEFECT, or WATCHER)
-* **startSeed**: The first seed to search
-* **endSeed**: The last seed to search
-* **verbose**: Whether to print out detailed information about each seed found
-* **exitAfterSearch** Set to true to cause the program to immediately exit after search every seed
-* **highestFloor** How many floors into the seed you want to search
+* **ascensionLevel**:  你所要搜寻种子对应的进阶等级（0-20）
+* **playerClass**: 你所搜寻种子对应的角色（铁甲战士、静默猎手、故障机器人、观者）
+* **startSeed**: 设定起始搜寻的种子值
+* **endSeed**: 设定种子搜寻在何处停止
+* **verbose**: 设定是否在搜寻到目标种子时，显示其详细信息
+* **exitAfterSearch** 设定是否在搜寻到目标种子时就结束搜寻
+* **highestFloor** 设定在此种子中你想爬塔的层数（最大55层，也即心脏）
+
+#### 以下是关于游戏进度的设定，角色参数对应各自的等级，boss参数对应解锁的boss数，一般都设置为其最大值即可。
+
 * **ironcladUnlocks** How many unlocks are available for the Ironclad (0 to 5)
 * **silentUnlocks** How many unlocks are available for the Silent (0 to 5)
 * **defectUnlocks** How many unlocks are available for the Defect (0 to 5)
@@ -42,9 +45,9 @@ Mod的安装：你可以从本项目的Release页面，或者自行从源代码�
 * **secondBoss** How many act 2 bosses have been seen (0 to 3)
 * **thirdBoss** How many act 3 bosses have been seen (0 to 3)
 
-### Navigation
+### 路线权重
 
-These room weights are used to determine which path is taken through each map. The path with the lowest weight, obtained by adding the weights for each individual node on the path, is selected.
+房间权重用来决定在筛选种子时选用何种路线。当某条路线上所有房间的权重和最低时，则SeedSearch就会选择此路线。
 
 * **eliteRoomWeight**
 * **monsterRoomWeight**
